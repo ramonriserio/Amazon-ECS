@@ -4,16 +4,8 @@ resource "aws_lb" "ecs_alb" {
   name               = "ecs-alb"
   internal           = false
   load_balancer_type = "application"
-#  security_groups    = ["sg-0a8a5d047e1e9e212"] # Security Group default
   security_groups    = [aws_security_group.security_group.id]
-  subnets = [                                   # default subnets (a, b, c, d, e, f)
-/*    "subnet-06799c0492058fe7d",                 # us-east1-f
-    "subnet-04a32a4d6929b00c6",
-    "subnet-0f083690187814987",
-    "subnet-07ebdb7d98ff6c3a2",
-    "subnet-0b92ffe359f7875cd",
-    "subnet-058e5931686efe405"
-*/
+  subnets = [
     aws_subnet.subnet.id,
     aws_subnet.subnet2.id
   ]
@@ -28,7 +20,8 @@ resource "aws_lb_target_group" "ecs_tg" {
   port        = 80
   protocol    = "HTTP"
   target_type = "ip"
-  vpc_id      = "vpc-068827f882e554167" # VPC default (COMENTAR ESTA LINHA PRA VER O QUE ACONTECE)
+#  vpc_id      = "vpc-068827f882e554167" # VPC default (COMENTAR ESTA LINHA PRA VER O QUE ACONTECE)
+  vpc_id      = aws_vpc.main.id # VPC default (COMENTAR ESTA LINHA PRA VER O QUE ACONTECE)
 
   health_check {
     path = "/"
