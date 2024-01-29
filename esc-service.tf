@@ -6,14 +6,19 @@ resource "aws_ecs_service" "ecs_service" {
   desired_count   = 2 # we want to run 2 instances of the container image on our ECS cluster
 
   network_configuration {
-    security_groups  = ["sg-0a8a5d047e1e9e212"] # Security Group default
+#    security_groups  = ["sg-0a8a5d047e1e9e212"] # Security Group default
+    security_groups    = [aws_security_group.security_group.id]
+
     subnets = [                                 # default subnets (a, b, c, d, e, f)
-      "subnet-06799c0492058fe7d",               # us-east1-f
+/*      "subnet-06799c0492058fe7d",               # us-east1-f
       "subnet-04a32a4d6929b00c6",
       "subnet-0f083690187814987",
       "subnet-07ebdb7d98ff6c3a2",
       "subnet-0b92ffe359f7875cd",
       "subnet-058e5931686efe405"
+*/
+      aws_subnet.subnet.id,
+      aws_subnet.subnet2.id
     ]
   }
 

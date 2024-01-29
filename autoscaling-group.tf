@@ -2,12 +2,15 @@
 # (and associate it with the lauch template created previously)
 resource "aws_autoscaling_group" "ecs_asg" {
   vpc_zone_identifier = [       # default subnets (a, b, c, d, e, f)
-    "subnet-06799c0492058fe7d", # us-east1-f
+/*    "subnet-06799c0492058fe7d", # us-east1-f
     "subnet-04a32a4d6929b00c6",
     "subnet-0f083690187814987",
     "subnet-07ebdb7d98ff6c3a2",
     "subnet-0b92ffe359f7875cd",
     "subnet-058e5931686efe405"
+*/
+    aws_subnet.subnet.id,
+    aws_subnet.subnet2.id
   ]
   desired_capacity = 2
   max_size         = 2

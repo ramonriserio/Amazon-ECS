@@ -6,7 +6,8 @@ resource "aws_launch_template" "ec2_lt" {
   instance_type = "t2.micro"
 
   key_name               = "humangov-ec2-key"
-  vpc_security_group_ids = ["sg-0a8a5d047e1e9e212"] # SG default
+#  vpc_security_group_ids = ["sg-0a8a5d047e1e9e212"] # SG default
+  vpc_security_group_ids = [aws_security_group.security_group.id]
   iam_instance_profile {
     name = "ecsInstanceRole" # it's a predefined role available in all AWS accounts
   }
