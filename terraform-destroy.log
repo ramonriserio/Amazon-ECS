@@ -1,0 +1,639 @@
+[0m[1maws_ecs_task_definition.ecs_task_definition: Refreshing state... [id=webapp][0m
+[0m[1maws_ecs_cluster.ecs_cluster: Refreshing state... [id=arn:aws:ecs:us-east-1:684644783255:cluster/ecs-cluster][0m
+[0m[1maws_vpc.main: Refreshing state... [id=vpc-0c929e8e50bdfdebd][0m
+[0m[1maws_lb_target_group.ecs_tg: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:684644783255:targetgroup/webapp-tg/1de85b469214f968][0m
+[0m[1maws_subnet.subnet2: Refreshing state... [id=subnet-0c29a20d3c940da21][0m
+[0m[1maws_subnet.subnet: Refreshing state... [id=subnet-00255beba827dbe1c][0m
+[0m[1maws_security_group.security_group: Refreshing state... [id=sg-0ae21175827a7cb6d][0m
+[0m[1maws_internet_gateway.internet_gateway: Refreshing state... [id=igw-05ef869340ab3ba7d][0m
+[0m[1maws_launch_template.ec2_lt: Refreshing state... [id=lt-062ee411672e79241][0m
+[0m[1maws_route_table.route_table: Refreshing state... [id=rtb-0ee2a49708e1ebcbf][0m
+[0m[1maws_lb.ecs_alb: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:684644783255:loadbalancer/app/ecs-alb/3d8c45ccbd485fd1][0m
+[0m[1maws_autoscaling_group.ecs_asg: Refreshing state... [id=terraform-20240202122401861400000004][0m
+[0m[1maws_route_table_association.subnet2_route: Refreshing state... [id=rtbassoc-05ad1d90462d4d230][0m
+[0m[1maws_route_table_association.subnet_route: Refreshing state... [id=rtbassoc-078cdb32ad88e9312][0m
+[0m[1maws_ecs_capacity_provider.ecs_capacity_provider: Refreshing state... [id=arn:aws:ecs:us-east-1:684644783255:capacity-provider/webapp-cp][0m
+[0m[1maws_lb_listener.ecs_alb_listener: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:684644783255:listener/app/ecs-alb/3d8c45ccbd485fd1/a442548d251b2480][0m
+[0m[1maws_ecs_service.ecs_service: Refreshing state... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc][0m
+[0m[1maws_ecs_cluster_capacity_providers.example: Refreshing state... [id=ecs-cluster][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [31m-[0m destroy[0m
+
+Terraform will perform the following actions:
+
+[1m  # aws_autoscaling_group.ecs_asg[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_autoscaling_group" "ecs_asg" {
+      [31m-[0m[0m arn                              = "arn:aws:autoscaling:us-east-1:684644783255:autoScalingGroup:2102d12d-b0e9-4c82-8c41-9bc3f345e271:autoScalingGroupName/terraform-20240202122401861400000004" [90m-> null[0m[0m
+      [31m-[0m[0m availability_zones               = [
+          [31m-[0m[0m "us-east-1a",
+          [31m-[0m[0m "us-east-1b",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m capacity_rebalance               = false [90m-> null[0m[0m
+      [31m-[0m[0m default_cooldown                 = 300 [90m-> null[0m[0m
+      [31m-[0m[0m default_instance_warmup          = 0 [90m-> null[0m[0m
+      [31m-[0m[0m desired_capacity                 = 1 [90m-> null[0m[0m
+      [31m-[0m[0m enabled_metrics                  = [] [90m-> null[0m[0m
+      [31m-[0m[0m force_delete                     = false [90m-> null[0m[0m
+      [31m-[0m[0m force_delete_warm_pool           = false [90m-> null[0m[0m
+      [31m-[0m[0m health_check_grace_period        = 300 [90m-> null[0m[0m
+      [31m-[0m[0m health_check_type                = "EC2" [90m-> null[0m[0m
+      [31m-[0m[0m id                               = "terraform-20240202122401861400000004" [90m-> null[0m[0m
+      [31m-[0m[0m ignore_failed_scaling_activities = false [90m-> null[0m[0m
+      [31m-[0m[0m load_balancers                   = [] [90m-> null[0m[0m
+      [31m-[0m[0m max_instance_lifetime            = 0 [90m-> null[0m[0m
+      [31m-[0m[0m max_size                         = 1 [90m-> null[0m[0m
+      [31m-[0m[0m metrics_granularity              = "1Minute" [90m-> null[0m[0m
+      [31m-[0m[0m min_size                         = 1 [90m-> null[0m[0m
+      [31m-[0m[0m name                             = "terraform-20240202122401861400000004" [90m-> null[0m[0m
+      [31m-[0m[0m name_prefix                      = "terraform-" [90m-> null[0m[0m
+      [31m-[0m[0m predicted_capacity               = 0 [90m-> null[0m[0m
+      [31m-[0m[0m protect_from_scale_in            = false [90m-> null[0m[0m
+      [31m-[0m[0m service_linked_role_arn          = "arn:aws:iam::684644783255:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling" [90m-> null[0m[0m
+      [31m-[0m[0m suspended_processes              = [] [90m-> null[0m[0m
+      [31m-[0m[0m target_group_arns                = [] [90m-> null[0m[0m
+      [31m-[0m[0m termination_policies             = [] [90m-> null[0m[0m
+      [31m-[0m[0m vpc_zone_identifier              = [
+          [31m-[0m[0m "subnet-00255beba827dbe1c",
+          [31m-[0m[0m "subnet-0c29a20d3c940da21",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m wait_for_capacity_timeout        = "10m" [90m-> null[0m[0m
+      [31m-[0m[0m warm_pool_size                   = 0 [90m-> null[0m[0m
+
+      [31m-[0m[0m launch_template {
+          [31m-[0m[0m id      = "lt-062ee411672e79241" [90m-> null[0m[0m
+          [31m-[0m[0m name    = "ecs-template20240202122353343800000002" [90m-> null[0m[0m
+          [31m-[0m[0m version = "$Latest" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m tag {
+          [31m-[0m[0m key                 = "AmazonECSManaged" [90m-> null[0m[0m
+          [31m-[0m[0m propagate_at_launch = true [90m-> null[0m[0m
+          [31m-[0m[0m value               = "true" [90m-> null[0m[0m
+        }
+    }
+
+[1m  # aws_ecs_capacity_provider.ecs_capacity_provider[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_ecs_capacity_provider" "ecs_capacity_provider" {
+      [31m-[0m[0m arn      = "arn:aws:ecs:us-east-1:684644783255:capacity-provider/webapp-cp" [90m-> null[0m[0m
+      [31m-[0m[0m id       = "arn:aws:ecs:us-east-1:684644783255:capacity-provider/webapp-cp" [90m-> null[0m[0m
+      [31m-[0m[0m name     = "webapp-cp" [90m-> null[0m[0m
+      [31m-[0m[0m tags     = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all = {} [90m-> null[0m[0m
+
+      [31m-[0m[0m auto_scaling_group_provider {
+          [31m-[0m[0m auto_scaling_group_arn         = "arn:aws:autoscaling:us-east-1:684644783255:autoScalingGroup:2102d12d-b0e9-4c82-8c41-9bc3f345e271:autoScalingGroupName/terraform-20240202122401861400000004" [90m-> null[0m[0m
+          [31m-[0m[0m managed_termination_protection = "DISABLED" [90m-> null[0m[0m
+
+          [31m-[0m[0m managed_scaling {
+              [31m-[0m[0m instance_warmup_period    = 0 [90m-> null[0m[0m
+              [31m-[0m[0m maximum_scaling_step_size = 1000 [90m-> null[0m[0m
+              [31m-[0m[0m minimum_scaling_step_size = 1 [90m-> null[0m[0m
+              [31m-[0m[0m status                    = "ENABLED" [90m-> null[0m[0m
+              [31m-[0m[0m target_capacity           = 100 [90m-> null[0m[0m
+            }
+        }
+    }
+
+[1m  # aws_ecs_cluster.ecs_cluster[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_ecs_cluster" "ecs_cluster" {
+      [31m-[0m[0m arn      = "arn:aws:ecs:us-east-1:684644783255:cluster/ecs-cluster" [90m-> null[0m[0m
+      [31m-[0m[0m id       = "arn:aws:ecs:us-east-1:684644783255:cluster/ecs-cluster" [90m-> null[0m[0m
+      [31m-[0m[0m name     = "ecs-cluster" [90m-> null[0m[0m
+      [31m-[0m[0m tags     = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all = {} [90m-> null[0m[0m
+
+      [31m-[0m[0m setting {
+          [31m-[0m[0m name  = "containerInsights" [90m-> null[0m[0m
+          [31m-[0m[0m value = "disabled" [90m-> null[0m[0m
+        }
+    }
+
+[1m  # aws_ecs_cluster_capacity_providers.example[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_ecs_cluster_capacity_providers" "example" {
+      [31m-[0m[0m capacity_providers = [
+          [31m-[0m[0m "webapp-cp",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m cluster_name       = "ecs-cluster" [90m-> null[0m[0m
+      [31m-[0m[0m id                 = "ecs-cluster" [90m-> null[0m[0m
+
+      [31m-[0m[0m default_capacity_provider_strategy {
+          [31m-[0m[0m base              = 1 [90m-> null[0m[0m
+          [31m-[0m[0m capacity_provider = "webapp-cp" [90m-> null[0m[0m
+          [31m-[0m[0m weight            = 100 [90m-> null[0m[0m
+        }
+    }
+
+[1m  # aws_ecs_service.ecs_service[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_ecs_service" "ecs_service" {
+      [31m-[0m[0m cluster                            = "arn:aws:ecs:us-east-1:684644783255:cluster/ecs-cluster" [90m-> null[0m[0m
+      [31m-[0m[0m deployment_maximum_percent         = 200 [90m-> null[0m[0m
+      [31m-[0m[0m deployment_minimum_healthy_percent = 100 [90m-> null[0m[0m
+      [31m-[0m[0m desired_count                      = 1 [90m-> null[0m[0m
+      [31m-[0m[0m enable_ecs_managed_tags            = false [90m-> null[0m[0m
+      [31m-[0m[0m enable_execute_command             = false [90m-> null[0m[0m
+      [31m-[0m[0m force_new_deployment               = true [90m-> null[0m[0m
+      [31m-[0m[0m health_check_grace_period_seconds  = 0 [90m-> null[0m[0m
+      [31m-[0m[0m iam_role                           = "/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS" [90m-> null[0m[0m
+      [31m-[0m[0m id                                 = "arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc" [90m-> null[0m[0m
+      [31m-[0m[0m name                               = "webapp-svc" [90m-> null[0m[0m
+      [31m-[0m[0m propagate_tags                     = "NONE" [90m-> null[0m[0m
+      [31m-[0m[0m scheduling_strategy                = "REPLICA" [90m-> null[0m[0m
+      [31m-[0m[0m tags                               = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                           = {} [90m-> null[0m[0m
+      [31m-[0m[0m task_definition                    = "arn:aws:ecs:us-east-1:684644783255:task-definition/webapp:101" [90m-> null[0m[0m
+      [31m-[0m[0m triggers                           = {
+          [31m-[0m[0m "redeployment" = "2024-02-02T12:24:48Z"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m wait_for_steady_state              = false [90m-> null[0m[0m
+
+      [31m-[0m[0m capacity_provider_strategy {
+          [31m-[0m[0m base              = 0 [90m-> null[0m[0m
+          [31m-[0m[0m capacity_provider = "webapp-cp" [90m-> null[0m[0m
+          [31m-[0m[0m weight            = 100 [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m deployment_circuit_breaker {
+          [31m-[0m[0m enable   = false [90m-> null[0m[0m
+          [31m-[0m[0m rollback = false [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m deployment_controller {
+          [31m-[0m[0m type = "ECS" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m load_balancer {
+          [31m-[0m[0m container_name   = "webapp-ctr" [90m-> null[0m[0m
+          [31m-[0m[0m container_port   = 80 [90m-> null[0m[0m
+          [31m-[0m[0m target_group_arn = "arn:aws:elasticloadbalancing:us-east-1:684644783255:targetgroup/webapp-tg/1de85b469214f968" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m network_configuration {
+          [31m-[0m[0m assign_public_ip = false [90m-> null[0m[0m
+          [31m-[0m[0m security_groups  = [
+              [31m-[0m[0m "sg-0ae21175827a7cb6d",
+            ] [90m-> null[0m[0m
+          [31m-[0m[0m subnets          = [
+              [31m-[0m[0m "subnet-00255beba827dbe1c",
+              [31m-[0m[0m "subnet-0c29a20d3c940da21",
+            ] [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m placement_constraints {
+          [31m-[0m[0m type = "distinctInstance" [90m-> null[0m[0m
+        }
+    }
+
+[1m  # aws_ecs_task_definition.ecs_task_definition[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_ecs_task_definition" "ecs_task_definition" {
+      [31m-[0m[0m arn                      = "arn:aws:ecs:us-east-1:684644783255:task-definition/webapp:101" [90m-> null[0m[0m
+      [31m-[0m[0m arn_without_revision     = "arn:aws:ecs:us-east-1:684644783255:task-definition/webapp" [90m-> null[0m[0m
+      [31m-[0m[0m container_definitions    = jsonencode(
+            [
+              [31m-[0m[0m {
+                  [31m-[0m[0m cpu          = 1024
+                  [31m-[0m[0m environment  = []
+                  [31m-[0m[0m essential    = true
+                  [31m-[0m[0m image        = "strm/helloworld-http"
+                  [31m-[0m[0m memory       = 256
+                  [31m-[0m[0m mountPoints  = []
+                  [31m-[0m[0m name         = "webapp-ctr"
+                  [31m-[0m[0m portMappings = [
+                      [31m-[0m[0m {
+                          [31m-[0m[0m containerPort = 80
+                          [31m-[0m[0m hostPort      = 80
+                          [31m-[0m[0m protocol      = "tcp"
+                        },
+                    ]
+                  [31m-[0m[0m volumesFrom  = []
+                },
+            ]
+        ) [90m-> null[0m[0m
+      [31m-[0m[0m cpu                      = "1024" [90m-> null[0m[0m
+      [31m-[0m[0m execution_role_arn       = "arn:aws:iam::684644783255:role/ecsTaskExecutionRole" [90m-> null[0m[0m
+      [31m-[0m[0m family                   = "webapp" [90m-> null[0m[0m
+      [31m-[0m[0m id                       = "webapp" [90m-> null[0m[0m
+      [31m-[0m[0m network_mode             = "awsvpc" [90m-> null[0m[0m
+      [31m-[0m[0m requires_compatibilities = [] [90m-> null[0m[0m
+      [31m-[0m[0m revision                 = 101 [90m-> null[0m[0m
+      [31m-[0m[0m skip_destroy             = false [90m-> null[0m[0m
+      [31m-[0m[0m tags                     = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                 = {} [90m-> null[0m[0m
+
+      [31m-[0m[0m runtime_platform {
+          [31m-[0m[0m cpu_architecture        = "X86_64" [90m-> null[0m[0m
+          [31m-[0m[0m operating_system_family = "LINUX" [90m-> null[0m[0m
+        }
+    }
+
+[1m  # aws_internet_gateway.internet_gateway[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_internet_gateway" "internet_gateway" {
+      [31m-[0m[0m arn      = "arn:aws:ec2:us-east-1:684644783255:internet-gateway/igw-05ef869340ab3ba7d" [90m-> null[0m[0m
+      [31m-[0m[0m id       = "igw-05ef869340ab3ba7d" [90m-> null[0m[0m
+      [31m-[0m[0m owner_id = "684644783255" [90m-> null[0m[0m
+      [31m-[0m[0m tags     = {
+          [31m-[0m[0m "Name" = "internet_gateway"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tags_all = {
+          [31m-[0m[0m "Name" = "internet_gateway"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m vpc_id   = "vpc-0c929e8e50bdfdebd" [90m-> null[0m[0m
+    }
+
+[1m  # aws_launch_template.ec2_lt[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_launch_template" "ec2_lt" {
+      [31m-[0m[0m arn                     = "arn:aws:ec2:us-east-1:684644783255:launch-template/lt-062ee411672e79241" [90m-> null[0m[0m
+      [31m-[0m[0m default_version         = 1 [90m-> null[0m[0m
+      [31m-[0m[0m disable_api_stop        = false [90m-> null[0m[0m
+      [31m-[0m[0m disable_api_termination = false [90m-> null[0m[0m
+      [31m-[0m[0m id                      = "lt-062ee411672e79241" [90m-> null[0m[0m
+      [31m-[0m[0m image_id                = "ami-0c45946ade6066f3d" [90m-> null[0m[0m
+      [31m-[0m[0m instance_type           = "t2.micro" [90m-> null[0m[0m
+      [31m-[0m[0m key_name                = "humangov-ec2-key" [90m-> null[0m[0m
+      [31m-[0m[0m latest_version          = 1 [90m-> null[0m[0m
+      [31m-[0m[0m name                    = "ecs-template20240202122353343800000002" [90m-> null[0m[0m
+      [31m-[0m[0m name_prefix             = "ecs-template" [90m-> null[0m[0m
+      [31m-[0m[0m security_group_names    = [] [90m-> null[0m[0m
+      [31m-[0m[0m tags                    = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                = {} [90m-> null[0m[0m
+      [31m-[0m[0m user_data               = "IyFiaW4vYmFzaAplY2hvIEVDU19DTFVTVEVSPWVjcy1jbHVzdGVyID4+IC9ldGMvZWNzL2Vjcy5jb25maWc7" [90m-> null[0m[0m
+      [31m-[0m[0m vpc_security_group_ids  = [
+          [31m-[0m[0m "sg-0ae21175827a7cb6d",
+        ] [90m-> null[0m[0m
+
+      [31m-[0m[0m iam_instance_profile {
+          [31m-[0m[0m name = "ecsInstanceRole" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m tag_specifications {
+          [31m-[0m[0m resource_type = "instance" [90m-> null[0m[0m
+          [31m-[0m[0m tags          = {
+              [31m-[0m[0m "Name" = "esc_instance"
+            } [90m-> null[0m[0m
+        }
+    }
+
+[1m  # aws_lb.ecs_alb[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_lb" "ecs_alb" {
+      [31m-[0m[0m arn                                         = "arn:aws:elasticloadbalancing:us-east-1:684644783255:loadbalancer/app/ecs-alb/3d8c45ccbd485fd1" [90m-> null[0m[0m
+      [31m-[0m[0m arn_suffix                                  = "app/ecs-alb/3d8c45ccbd485fd1" [90m-> null[0m[0m
+      [31m-[0m[0m desync_mitigation_mode                      = "defensive" [90m-> null[0m[0m
+      [31m-[0m[0m dns_name                                    = "ecs-alb-2041365722.us-east-1.elb.amazonaws.com" [90m-> null[0m[0m
+      [31m-[0m[0m drop_invalid_header_fields                  = false [90m-> null[0m[0m
+      [31m-[0m[0m enable_cross_zone_load_balancing            = true [90m-> null[0m[0m
+      [31m-[0m[0m enable_deletion_protection                  = false [90m-> null[0m[0m
+      [31m-[0m[0m enable_http2                                = true [90m-> null[0m[0m
+      [31m-[0m[0m enable_tls_version_and_cipher_suite_headers = false [90m-> null[0m[0m
+      [31m-[0m[0m enable_waf_fail_open                        = false [90m-> null[0m[0m
+      [31m-[0m[0m enable_xff_client_port                      = false [90m-> null[0m[0m
+      [31m-[0m[0m id                                          = "arn:aws:elasticloadbalancing:us-east-1:684644783255:loadbalancer/app/ecs-alb/3d8c45ccbd485fd1" [90m-> null[0m[0m
+      [31m-[0m[0m idle_timeout                                = 60 [90m-> null[0m[0m
+      [31m-[0m[0m internal                                    = false [90m-> null[0m[0m
+      [31m-[0m[0m ip_address_type                             = "ipv4" [90m-> null[0m[0m
+      [31m-[0m[0m load_balancer_type                          = "application" [90m-> null[0m[0m
+      [31m-[0m[0m name                                        = "ecs-alb" [90m-> null[0m[0m
+      [31m-[0m[0m preserve_host_header                        = false [90m-> null[0m[0m
+      [31m-[0m[0m security_groups                             = [
+          [31m-[0m[0m "sg-0ae21175827a7cb6d",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m subnets                                     = [
+          [31m-[0m[0m "subnet-00255beba827dbe1c",
+          [31m-[0m[0m "subnet-0c29a20d3c940da21",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m tags                                        = {
+          [31m-[0m[0m "Name" = "ecs-alb"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                                    = {
+          [31m-[0m[0m "Name" = "ecs-alb"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m vpc_id                                      = "vpc-0c929e8e50bdfdebd" [90m-> null[0m[0m
+      [31m-[0m[0m xff_header_processing_mode                  = "append" [90m-> null[0m[0m
+      [31m-[0m[0m zone_id                                     = "Z35SXDOTRQ7X7K" [90m-> null[0m[0m
+
+      [31m-[0m[0m access_logs {
+          [31m-[0m[0m enabled = false [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m connection_logs {
+          [31m-[0m[0m enabled = false [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m subnet_mapping {
+          [31m-[0m[0m subnet_id = "subnet-00255beba827dbe1c" [90m-> null[0m[0m
+        }
+      [31m-[0m[0m subnet_mapping {
+          [31m-[0m[0m subnet_id = "subnet-0c29a20d3c940da21" [90m-> null[0m[0m
+        }
+    }
+
+[1m  # aws_lb_listener.ecs_alb_listener[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_lb_listener" "ecs_alb_listener" {
+      [31m-[0m[0m arn               = "arn:aws:elasticloadbalancing:us-east-1:684644783255:listener/app/ecs-alb/3d8c45ccbd485fd1/a442548d251b2480" [90m-> null[0m[0m
+      [31m-[0m[0m id                = "arn:aws:elasticloadbalancing:us-east-1:684644783255:listener/app/ecs-alb/3d8c45ccbd485fd1/a442548d251b2480" [90m-> null[0m[0m
+      [31m-[0m[0m load_balancer_arn = "arn:aws:elasticloadbalancing:us-east-1:684644783255:loadbalancer/app/ecs-alb/3d8c45ccbd485fd1" [90m-> null[0m[0m
+      [31m-[0m[0m port              = 80 [90m-> null[0m[0m
+      [31m-[0m[0m protocol          = "HTTP" [90m-> null[0m[0m
+      [31m-[0m[0m tags              = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all          = {} [90m-> null[0m[0m
+
+      [31m-[0m[0m default_action {
+          [31m-[0m[0m order            = 1 [90m-> null[0m[0m
+          [31m-[0m[0m target_group_arn = "arn:aws:elasticloadbalancing:us-east-1:684644783255:targetgroup/webapp-tg/1de85b469214f968" [90m-> null[0m[0m
+          [31m-[0m[0m type             = "forward" [90m-> null[0m[0m
+        }
+    }
+
+[1m  # aws_lb_target_group.ecs_tg[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_lb_target_group" "ecs_tg" {
+      [31m-[0m[0m arn                                = "arn:aws:elasticloadbalancing:us-east-1:684644783255:targetgroup/webapp-tg/1de85b469214f968" [90m-> null[0m[0m
+      [31m-[0m[0m arn_suffix                         = "targetgroup/webapp-tg/1de85b469214f968" [90m-> null[0m[0m
+      [31m-[0m[0m deregistration_delay               = "300" [90m-> null[0m[0m
+      [31m-[0m[0m id                                 = "arn:aws:elasticloadbalancing:us-east-1:684644783255:targetgroup/webapp-tg/1de85b469214f968" [90m-> null[0m[0m
+      [31m-[0m[0m ip_address_type                    = "ipv4" [90m-> null[0m[0m
+      [31m-[0m[0m lambda_multi_value_headers_enabled = false [90m-> null[0m[0m
+      [31m-[0m[0m load_balancing_algorithm_type      = "round_robin" [90m-> null[0m[0m
+      [31m-[0m[0m load_balancing_anomaly_mitigation  = "off" [90m-> null[0m[0m
+      [31m-[0m[0m load_balancing_cross_zone_enabled  = "use_load_balancer_configuration" [90m-> null[0m[0m
+      [31m-[0m[0m name                               = "webapp-tg" [90m-> null[0m[0m
+      [31m-[0m[0m port                               = 80 [90m-> null[0m[0m
+      [31m-[0m[0m protocol                           = "HTTP" [90m-> null[0m[0m
+      [31m-[0m[0m protocol_version                   = "HTTP1" [90m-> null[0m[0m
+      [31m-[0m[0m proxy_protocol_v2                  = false [90m-> null[0m[0m
+      [31m-[0m[0m slow_start                         = 0 [90m-> null[0m[0m
+      [31m-[0m[0m tags                               = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                           = {} [90m-> null[0m[0m
+      [31m-[0m[0m target_type                        = "ip" [90m-> null[0m[0m
+      [31m-[0m[0m vpc_id                             = "vpc-0c929e8e50bdfdebd" [90m-> null[0m[0m
+
+      [31m-[0m[0m health_check {
+          [31m-[0m[0m enabled             = true [90m-> null[0m[0m
+          [31m-[0m[0m healthy_threshold   = 3 [90m-> null[0m[0m
+          [31m-[0m[0m interval            = 30 [90m-> null[0m[0m
+          [31m-[0m[0m matcher             = "200" [90m-> null[0m[0m
+          [31m-[0m[0m path                = "/" [90m-> null[0m[0m
+          [31m-[0m[0m port                = "traffic-port" [90m-> null[0m[0m
+          [31m-[0m[0m protocol            = "HTTP" [90m-> null[0m[0m
+          [31m-[0m[0m timeout             = 5 [90m-> null[0m[0m
+          [31m-[0m[0m unhealthy_threshold = 3 [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m stickiness {
+          [31m-[0m[0m cookie_duration = 86400 [90m-> null[0m[0m
+          [31m-[0m[0m enabled         = false [90m-> null[0m[0m
+          [31m-[0m[0m type            = "lb_cookie" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m target_failover {}
+
+      [31m-[0m[0m target_health_state {}
+    }
+
+[1m  # aws_route_table.route_table[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_route_table" "route_table" {
+      [31m-[0m[0m arn              = "arn:aws:ec2:us-east-1:684644783255:route-table/rtb-0ee2a49708e1ebcbf" [90m-> null[0m[0m
+      [31m-[0m[0m id               = "rtb-0ee2a49708e1ebcbf" [90m-> null[0m[0m
+      [31m-[0m[0m owner_id         = "684644783255" [90m-> null[0m[0m
+      [31m-[0m[0m propagating_vgws = [] [90m-> null[0m[0m
+      [31m-[0m[0m route            = [
+          [31m-[0m[0m {
+              [31m-[0m[0m carrier_gateway_id         = ""
+              [31m-[0m[0m cidr_block                 = "0.0.0.0/0"
+              [31m-[0m[0m core_network_arn           = ""
+              [31m-[0m[0m destination_prefix_list_id = ""
+              [31m-[0m[0m egress_only_gateway_id     = ""
+              [31m-[0m[0m gateway_id                 = "igw-05ef869340ab3ba7d"
+              [31m-[0m[0m ipv6_cidr_block            = ""
+              [31m-[0m[0m local_gateway_id           = ""
+              [31m-[0m[0m nat_gateway_id             = ""
+              [31m-[0m[0m network_interface_id       = ""
+              [31m-[0m[0m transit_gateway_id         = ""
+              [31m-[0m[0m vpc_endpoint_id            = ""
+              [31m-[0m[0m vpc_peering_connection_id  = ""
+            },
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m tags             = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all         = {} [90m-> null[0m[0m
+      [31m-[0m[0m vpc_id           = "vpc-0c929e8e50bdfdebd" [90m-> null[0m[0m
+    }
+
+[1m  # aws_route_table_association.subnet2_route[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_route_table_association" "subnet2_route" {
+      [31m-[0m[0m id             = "rtbassoc-05ad1d90462d4d230" [90m-> null[0m[0m
+      [31m-[0m[0m route_table_id = "rtb-0ee2a49708e1ebcbf" [90m-> null[0m[0m
+      [31m-[0m[0m subnet_id      = "subnet-0c29a20d3c940da21" [90m-> null[0m[0m
+    }
+
+[1m  # aws_route_table_association.subnet_route[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_route_table_association" "subnet_route" {
+      [31m-[0m[0m id             = "rtbassoc-078cdb32ad88e9312" [90m-> null[0m[0m
+      [31m-[0m[0m route_table_id = "rtb-0ee2a49708e1ebcbf" [90m-> null[0m[0m
+      [31m-[0m[0m subnet_id      = "subnet-00255beba827dbe1c" [90m-> null[0m[0m
+    }
+
+[1m  # aws_security_group.security_group[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_security_group" "security_group" {
+      [31m-[0m[0m arn                    = "arn:aws:ec2:us-east-1:684644783255:security-group/sg-0ae21175827a7cb6d" [90m-> null[0m[0m
+      [31m-[0m[0m description            = "Managed by Terraform" [90m-> null[0m[0m
+      [31m-[0m[0m egress                 = [
+          [31m-[0m[0m {
+              [31m-[0m[0m cidr_blocks      = [
+                  [31m-[0m[0m "0.0.0.0/0",
+                ]
+              [31m-[0m[0m description      = ""
+              [31m-[0m[0m from_port        = 0
+              [31m-[0m[0m ipv6_cidr_blocks = []
+              [31m-[0m[0m prefix_list_ids  = []
+              [31m-[0m[0m protocol         = "-1"
+              [31m-[0m[0m security_groups  = []
+              [31m-[0m[0m self             = false
+              [31m-[0m[0m to_port          = 0
+            },
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m id                     = "sg-0ae21175827a7cb6d" [90m-> null[0m[0m
+      [31m-[0m[0m ingress                = [
+          [31m-[0m[0m {
+              [31m-[0m[0m cidr_blocks      = [
+                  [31m-[0m[0m "0.0.0.0/0",
+                ]
+              [31m-[0m[0m description      = "any"
+              [31m-[0m[0m from_port        = 0
+              [31m-[0m[0m ipv6_cidr_blocks = []
+              [31m-[0m[0m prefix_list_ids  = []
+              [31m-[0m[0m protocol         = "-1"
+              [31m-[0m[0m security_groups  = []
+              [31m-[0m[0m self             = false
+              [31m-[0m[0m to_port          = 0
+            },
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m name                   = "terraform-20240202122351076800000001" [90m-> null[0m[0m
+      [31m-[0m[0m name_prefix            = "terraform-" [90m-> null[0m[0m
+      [31m-[0m[0m owner_id               = "684644783255" [90m-> null[0m[0m
+      [31m-[0m[0m revoke_rules_on_delete = false [90m-> null[0m[0m
+      [31m-[0m[0m tags                   = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all               = {} [90m-> null[0m[0m
+      [31m-[0m[0m vpc_id                 = "vpc-0c929e8e50bdfdebd" [90m-> null[0m[0m
+    }
+
+[1m  # aws_subnet.subnet[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_subnet" "subnet" {
+      [31m-[0m[0m arn                                            = "arn:aws:ec2:us-east-1:684644783255:subnet/subnet-00255beba827dbe1c" [90m-> null[0m[0m
+      [31m-[0m[0m assign_ipv6_address_on_creation                = false [90m-> null[0m[0m
+      [31m-[0m[0m availability_zone                              = "us-east-1a" [90m-> null[0m[0m
+      [31m-[0m[0m availability_zone_id                           = "use1-az6" [90m-> null[0m[0m
+      [31m-[0m[0m cidr_block                                     = "10.0.1.0/24" [90m-> null[0m[0m
+      [31m-[0m[0m enable_dns64                                   = false [90m-> null[0m[0m
+      [31m-[0m[0m enable_lni_at_device_index                     = 0 [90m-> null[0m[0m
+      [31m-[0m[0m enable_resource_name_dns_a_record_on_launch    = false [90m-> null[0m[0m
+      [31m-[0m[0m enable_resource_name_dns_aaaa_record_on_launch = false [90m-> null[0m[0m
+      [31m-[0m[0m id                                             = "subnet-00255beba827dbe1c" [90m-> null[0m[0m
+      [31m-[0m[0m ipv6_native                                    = false [90m-> null[0m[0m
+      [31m-[0m[0m map_customer_owned_ip_on_launch                = false [90m-> null[0m[0m
+      [31m-[0m[0m map_public_ip_on_launch                        = true [90m-> null[0m[0m
+      [31m-[0m[0m owner_id                                       = "684644783255" [90m-> null[0m[0m
+      [31m-[0m[0m private_dns_hostname_type_on_launch            = "ip-name" [90m-> null[0m[0m
+      [31m-[0m[0m tags                                           = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                                       = {} [90m-> null[0m[0m
+      [31m-[0m[0m vpc_id                                         = "vpc-0c929e8e50bdfdebd" [90m-> null[0m[0m
+    }
+
+[1m  # aws_subnet.subnet2[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_subnet" "subnet2" {
+      [31m-[0m[0m arn                                            = "arn:aws:ec2:us-east-1:684644783255:subnet/subnet-0c29a20d3c940da21" [90m-> null[0m[0m
+      [31m-[0m[0m assign_ipv6_address_on_creation                = false [90m-> null[0m[0m
+      [31m-[0m[0m availability_zone                              = "us-east-1b" [90m-> null[0m[0m
+      [31m-[0m[0m availability_zone_id                           = "use1-az1" [90m-> null[0m[0m
+      [31m-[0m[0m cidr_block                                     = "10.0.2.0/24" [90m-> null[0m[0m
+      [31m-[0m[0m enable_dns64                                   = false [90m-> null[0m[0m
+      [31m-[0m[0m enable_lni_at_device_index                     = 0 [90m-> null[0m[0m
+      [31m-[0m[0m enable_resource_name_dns_a_record_on_launch    = false [90m-> null[0m[0m
+      [31m-[0m[0m enable_resource_name_dns_aaaa_record_on_launch = false [90m-> null[0m[0m
+      [31m-[0m[0m id                                             = "subnet-0c29a20d3c940da21" [90m-> null[0m[0m
+      [31m-[0m[0m ipv6_native                                    = false [90m-> null[0m[0m
+      [31m-[0m[0m map_customer_owned_ip_on_launch                = false [90m-> null[0m[0m
+      [31m-[0m[0m map_public_ip_on_launch                        = true [90m-> null[0m[0m
+      [31m-[0m[0m owner_id                                       = "684644783255" [90m-> null[0m[0m
+      [31m-[0m[0m private_dns_hostname_type_on_launch            = "ip-name" [90m-> null[0m[0m
+      [31m-[0m[0m tags                                           = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                                       = {} [90m-> null[0m[0m
+      [31m-[0m[0m vpc_id                                         = "vpc-0c929e8e50bdfdebd" [90m-> null[0m[0m
+    }
+
+[1m  # aws_vpc.main[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_vpc" "main" {
+      [31m-[0m[0m arn                                  = "arn:aws:ec2:us-east-1:684644783255:vpc/vpc-0c929e8e50bdfdebd" [90m-> null[0m[0m
+      [31m-[0m[0m assign_generated_ipv6_cidr_block     = false [90m-> null[0m[0m
+      [31m-[0m[0m cidr_block                           = "10.0.0.0/16" [90m-> null[0m[0m
+      [31m-[0m[0m default_network_acl_id               = "acl-05f73013be8faaef5" [90m-> null[0m[0m
+      [31m-[0m[0m default_route_table_id               = "rtb-04ae9a7f8a3d20310" [90m-> null[0m[0m
+      [31m-[0m[0m default_security_group_id            = "sg-0401be05b77d8b140" [90m-> null[0m[0m
+      [31m-[0m[0m dhcp_options_id                      = "dopt-0b52f51758da9820c" [90m-> null[0m[0m
+      [31m-[0m[0m enable_dns_hostnames                 = true [90m-> null[0m[0m
+      [31m-[0m[0m enable_dns_support                   = true [90m-> null[0m[0m
+      [31m-[0m[0m enable_network_address_usage_metrics = false [90m-> null[0m[0m
+      [31m-[0m[0m id                                   = "vpc-0c929e8e50bdfdebd" [90m-> null[0m[0m
+      [31m-[0m[0m instance_tenancy                     = "default" [90m-> null[0m[0m
+      [31m-[0m[0m ipv6_netmask_length                  = 0 [90m-> null[0m[0m
+      [31m-[0m[0m main_route_table_id                  = "rtb-04ae9a7f8a3d20310" [90m-> null[0m[0m
+      [31m-[0m[0m owner_id                             = "684644783255" [90m-> null[0m[0m
+      [31m-[0m[0m tags                                 = {
+          [31m-[0m[0m "name" = "main"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                             = {
+          [31m-[0m[0m "name" = "main"
+        } [90m-> null[0m[0m
+    }
+
+[1mPlan:[0m 0 to add, 0 to change, 18 to destroy.
+[0m[0m[1maws_route_table_association.subnet2_route: Destroying... [id=rtbassoc-05ad1d90462d4d230][0m[0m
+[0m[1maws_ecs_cluster_capacity_providers.example: Destroying... [id=ecs-cluster][0m[0m
+[0m[1maws_route_table_association.subnet_route: Destroying... [id=rtbassoc-078cdb32ad88e9312][0m[0m
+[0m[1maws_lb_listener.ecs_alb_listener: Destroying... [id=arn:aws:elasticloadbalancing:us-east-1:684644783255:listener/app/ecs-alb/3d8c45ccbd485fd1/a442548d251b2480][0m[0m
+[0m[1maws_ecs_service.ecs_service: Destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc][0m[0m
+[0m[1maws_lb_listener.ecs_alb_listener: Destruction complete after 0s[0m
+[0m[1maws_lb.ecs_alb: Destroying... [id=arn:aws:elasticloadbalancing:us-east-1:684644783255:loadbalancer/app/ecs-alb/3d8c45ccbd485fd1][0m[0m
+[0m[1maws_route_table_association.subnet2_route: Destruction complete after 0s[0m
+[0m[1maws_route_table_association.subnet_route: Destruction complete after 0s[0m
+[0m[1maws_route_table.route_table: Destroying... [id=rtb-0ee2a49708e1ebcbf][0m[0m
+[0m[1maws_route_table.route_table: Destruction complete after 1s[0m
+[0m[1maws_lb.ecs_alb: Destruction complete after 1s[0m
+[0m[1maws_ecs_cluster_capacity_providers.example: Still destroying... [id=ecs-cluster, 10s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 10s elapsed][0m[0m
+[0m[1maws_ecs_cluster_capacity_providers.example: Destruction complete after 11s[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 20s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 30s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 40s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 50s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 1m0s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 1m10s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 1m20s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 1m30s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 1m40s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 1m50s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 2m0s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 2m10s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 2m20s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 2m30s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 2m40s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 2m50s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 3m0s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 3m10s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 3m20s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 3m30s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 3m40s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 3m50s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 4m0s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 4m10s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 4m20s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 4m30s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 4m40s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 4m50s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 5m0s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 5m10s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 5m20s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 5m30s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 5m40s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 5m50s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 6m0s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 6m10s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 6m20s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 6m30s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 6m40s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 6m50s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 7m0s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 7m10s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 7m20s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 7m30s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 7m40s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 7m50s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 8m0s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 8m10s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 8m20s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 8m30s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 8m40s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 8m50s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 9m0s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 9m10s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 9m20s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 9m30s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 9m40s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 9m50s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 10m0s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 10m10s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 10m20s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 10m30s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 10m40s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 10m50s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 11m0s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 11m10s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 11m20s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 11m30s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 11m40s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 11m50s elapsed][0m[0m
+[0m[1maws_ecs_service.ecs_service: Still destroying... [id=arn:aws:ecs:us-east-1:684644783255:service/ecs-cluster/webapp-svc, 12m0s elapsed][0m[0m
+
+Interrupt received.
+Please wait for Terraform to exit or data loss may occur.
+Gracefully shutting down...
+
+Stopping operation...
